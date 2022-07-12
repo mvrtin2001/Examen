@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
+  <link rel="shortcut icon" href="images/Pokeball.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'app/css/estilo_buscador.css' %}">
+  {% endblock %}
+</head>
+<body>
+  <h1 class="title">Buscador Pokemons</h1>
+  <main class="main">
+    <section class="inputFields">
+      <input type="text" name="" id="nombrePokemon" placeholder="Pokemon name or ID">
+      <div class="buttons">
+        <img src="{% static 'app/img/search.svg' %}" alt="Buscar Pokemon" id="buscarPokemon">
+        <img src="{% static 'app/img/cancel.svg' %}" alt="Eliminar Pokemon" id="eliminarPokemon">
+      </div>
+      <li>
+        <a href="{% url 'home'%}"> Ir al inicio</a>
+      </li>
+    </section>
+
+    <section class="pokemonData" id="app"></section>
+  </main>
+  {% block js %}
+  <script src="{% static 'app/js/random.js' %}"></script>
+  {% endblock %}
+</body>
+</html>
